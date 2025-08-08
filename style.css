@@ -160,7 +160,6 @@ body {
   }
 }
 
-
 /* CONTACTO */
 .contacto {
   padding: 60px 20px;
@@ -181,6 +180,7 @@ body {
   color: #333;
   line-height: 1.5;
 }
+
 /* Whatsapp*/
 .btn-whatsapp {
   display: inline-flex;
@@ -196,6 +196,8 @@ body {
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
   transition: all 0.3s ease;
   animation: pulse 2s infinite;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 .btn-whatsapp:hover {
@@ -269,8 +271,17 @@ body {
     flex-direction: column;
     text-align: center;
   }
-}
 
+  /* Aquí el cambio para que el botón WhatsApp no sobresalga en móvil */
+  .btn-whatsapp {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 1rem;
+    white-space: normal;
+    text-align: center;
+  }
+}
 
 /* REVEAL ANIMATIONS */
 .reveal {
@@ -281,4 +292,55 @@ body {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* SOBRE MÍ */
+.sobre {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--dark);
+}
+
+.sobre h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sobre section {
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.sobre section img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+/* RESPONSIVE PARA SOBRE MÍ */
+@media (max-width: 768px) {
+  .sobre {
+    padding: 30px 15px;
+  }
+  .sobre h1 {
+    font-size: 2rem;
+  }
+  .sobre section {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre {
+    padding: 20px 10px;
+  }
+  .sobre h1 {
+    font-size: 1.6rem;
+  }
+  .sobre section {
+    margin-bottom: 20px;
+  }
 }
