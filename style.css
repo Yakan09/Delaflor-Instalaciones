@@ -92,23 +92,19 @@ body {
 }
 
 /* SOBRE */
-.sobre {
-  padding: 60px 20px;
-  text-align: center;
-}
-.sobre video {
-  max-width: 90%;
-  margin-top: 20px;
-}
 .video-card {
   position: relative;
-  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
 .video-card video {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100vh; /* más alto en PC */
+  object-fit: cover;
 }
 
 .video-overlay-text {
@@ -120,6 +116,9 @@ body {
   text-align: center;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
   z-index: 2;
+  padding: 0 1rem;
+  width: 90%;
+  max-width: 700px;
 }
 
 .video-overlay-text h1 {
@@ -130,6 +129,37 @@ body {
 .video-overlay-text p {
   font-size: 1.2rem;
 }
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .video-card video {
+    height: 60vh; /* más alto en tablet */
+  }
+
+  .video-overlay-text h1 {
+    font-size: 2rem;
+  }
+
+  .video-overlay-text p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-card video {
+    height: 50vh; /* más alto en móvil */
+  }
+
+  .video-overlay-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .video-overlay-text p {
+    font-size: 1rem;
+  }
+}
+
 
 /* CONTACTO */
 .contacto {
@@ -151,7 +181,7 @@ body {
   color: #333;
   line-height: 1.5;
 }
-
+/* Whatsapp*/
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
